@@ -12,11 +12,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $passwords2 = test_input($_POST["passwords2_ins"]);
 }
 
-/* 
-	$con = mysqli_connect("localhost","root","123","phpmyadmin");
-	if (!$con)
- 	 {
-  		die('Could not connect: ' . mysql_error());
-  	 }
- */
+ 
  ?>

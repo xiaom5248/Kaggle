@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $mysqli = new mysqli("localhost","root","123","phpmyadmin");
-$sql = "SELECT * FROM user WHERE user_logname ='".$email."'" ;
+$sql = "SELECT * FROM user WHERE user_logname ='".$email."' AND user_motdepasse = '".$password."'" ;
 $result = $mysqli->query($sql);
 if($result){
 	if($result->num_rows>0){
@@ -29,7 +29,5 @@ if($result){
 	}
 
 }
-
-  
-
+$mysqli->close();
 ?>

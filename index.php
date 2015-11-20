@@ -31,7 +31,8 @@
   <div class="row">
     <div class="col-sm-4 text-center col-lg-4 col-lg-offset-2">      
       <img  src="img/champion.jpg" alt= "logo" class="img-responsive">      
-      <button type="button" class="btn btn-info btn-lg btn-block">Afficher les équipe</button>
+      <input type="button"  class="btn btn-info btn-lg btn-block" value="Liste d'equipe" onclick="window.location.href='http://localhost/listequipe.php'"></input>
+      
     </div>
     <div class="text-center col-sm-4 col-lg-offset-1">
     	<div class="row">
@@ -58,7 +59,7 @@
                         	<h5> Identifiant </h5>
                     	</div>
                         <div class=" text-center col-lg-7">
-                        	<input type="email" class="form-control"  placeholder="Email" name="email_login">
+                        	<input type="email" class="form-control"  placeholder="Email" name="email_login" required >
                     	</div>
                     </div>
                     <br/>
@@ -67,7 +68,7 @@
                         	<h5> Mot de passe </h5>
                     	</div>
                         <div class=" text-center col-lg-7">
-                        	<input type="password" class="form-control"  placeholder="Password" name="password_login">
+                        	<input type="password" class="form-control "  placeholder="Password" name="password_login" required>
                     	</div>
                     </div>
                     

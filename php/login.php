@@ -1,5 +1,5 @@
 <?php
-$email = $password =  $result  = "";
+$email = $password =  $result  =$username =$limit= $userequipe="";
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -18,8 +18,21 @@ $sql = "SELECT * FROM user WHERE user_logname ='".$email."' AND user_motdepasse 
 $result = $mysqli->query($sql);
 if($result){	
 	if($result->num_rows>0){    //username and password correct         
-		//while($row = $result->fetch_array())
-				echo "true";										
+		while($row = $result->fetch_array()){
+				session_start();
+				$_SESSION["admin"] = true;
+				$_SESSION["code"] = mt_rand(0,100000);
+				$username = $row["user_name"];
+				$limit = $row["user_type"];
+				$userequipe = $row["user_equipe_id"];
+				if($limit == "1"){
+					echo "equipier.html";
+				}
+				else{
+					echo "chef.html";
+				}
+		}
+													
 	}
 	elseif($result->num_rows==0){ //username or password incorrect
 						

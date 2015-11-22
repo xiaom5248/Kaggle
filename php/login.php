@@ -10,6 +10,7 @@ function test_input($data) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
   $email = test_input(@$_POST["logname"]);
   $password = test_input(@$_POST["logpass"]);
+  $password = sha1($password);
 }
 
 $mysqli = new mysqli("localhost","root","123","phpmyadmin");

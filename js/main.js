@@ -71,6 +71,37 @@ $("#connecter").on('click',function(){
 		else{
 			type_i = "1";
 		}
+		
+		if(email_i == ""){ // if not fill the email
+		$('#email_ins_div').addClass("has-error");
+		$('#error_ins').empty();
+		$('#error_ins').append("<br/><div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Désolé!</strong> Veuillez saisir votre E-mail</div>");			
+		}
+		else if(name_i==""){  // if not fill the name
+		$('#name_ins_div').addClass("has-error");
+		$('#error_ins').empty();
+		$('#error_ins').append("<br/><div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Désolé!</strong> Veuillez saisir votre nom et prenom</div>");					
+		}
+		else if(password1_i==""||password2_i==""){   // if not fill the password
+		$('#password1_ins_div').addClass("has-error");
+		$('#password2_ins_div').addClass("has-error");
+		$('#error_ins').empty();
+		$('#error_ins').append("<br/><div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Désolé!</strong> Veuillez saisir votre mot de passe</div>");							
+		}		
+		else if(!(email_i.indexOf("@")>=1 && email_i.indexOf(".")>=3)){  // if the format of email not correct
+			$('#email_ins_div').addClass("has-error");
+		$('#error_ins').empty();
+		$('#error_ins').append("<br/><div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Désolé!</strong> E-mail est incorrect</div>");			
+		}
+		else if(password1_i != password2_i){  // 2 password are not the same
+		 $('#password1_ins_div').addClass("has-error");
+		$('#password2_ins_div').addClass("has-error");
+		$('#error_ins').empty();
+		$('#error_ins').append("<br/><div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Désolé!</strong> 2 mot de passe ne sont pas pareil </div>");							
+			
+		}
+		else{
+			
 			$.ajax({
 						url: "php/inscription.php",
 						type: "POST",
@@ -83,16 +114,21 @@ $("#connecter").on('click',function(){
 						dataType: "text",
 						success: function(result){
 							if(result != "true"){  //if user name is not available
-							//$('#email_div').addClass("has-error");
-							//$('#password_div').addClass("has-error");
-							//$('#error_login').empty();
+							$('#email_ins').addClass("has-error");
+							
+							$('#error_ins').empty();
 							$('#error_ins').append("<br/><div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Désolé!</strong> Cet adresse E-mail semble être associée à un autre compte, veuillez saisir l'autre adress</div>");
 							}
 							else{      //  if user name is  available
-							location.href ="listequipe.php";
+							$('#error_ins').empty();
+		  					$('#error_ins').append("<br/><div class='alert alert-success alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Felicitations!</strong> Inscription succes, veuille vous connecter</div>");
+							
 							}
 						
 						}
 					});	
+		}
+		
+			
 		
 	});

@@ -16,7 +16,7 @@ $('#myTabs a[href="#Inscription"]').click(function (e) {
 // ////////////////////////////////////////
 //       button connection clicked
 //////////////////////////////////////////
-var email,password="";
+var email,password ="";
 $("#connecter").on('click',function(){   
 	email = $('#email_login').val();
 	password = $('#password_login').val();
@@ -57,27 +57,28 @@ $("#connecter").on('click',function(){
 //       button inscription clicked
 //////////////////////////////////////////
 
-var email_ins,password1_ins,password2_ins,type_ins,name_ins ="";
-		email_ins = $('#email_ins').val();
-		password1_ins = $('#password1_ins').val();
-		password2_ins = $('#password2_ins').val();		
-		name_ins = $('#name_ins').val();
-		type_ins = $('#type_ins').find("option:selected").text();
-		if(type_ins == "Chef d'equipe"){
-			type_ins = "2";
+		var email_i,password1_i,password2_i,type_i,name_i="";
+	$("#inscription").on('click',function(){
+		
+		email_i = $('#email_ins').val();
+		password1_i = $('#password1_ins').val();
+		password2_i = $('#password2_ins').val();		
+		name_i = $('#name_ins').val();
+		type_i = $('#type_ins').find("option:selected").text();
+		if(type_i == "Chef d'equipe"){
+			type_i = "2";
 		}
 		else{
-			type_ins = "1";
+			type_i = "1";
 		}
-	$("inscription").on('click',function(){
 			$.ajax({
 						url: "php/inscription.php",
 						type: "POST",
 						data: {
-							email: email_ins,
-							password: password1_ins,
-							type: type_ins,
-							name: name_ins
+							email: email_i,
+							password: password2_i,
+							type: type_i,
+							name: name_i
 						},
 						dataType: "text",
 						success: function(result){
@@ -90,7 +91,7 @@ var email_ins,password1_ins,password2_ins,type_ins,name_ins ="";
 							else{      //  if user name is  available
 							location.href ="listequipe.php";
 							}
-							
+						
 						}
 					});	
 		

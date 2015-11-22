@@ -21,7 +21,8 @@ if($result){
 	if($result->num_rows>0){    //if user name existe        						
 					echo "false";									
 	}
-	elseif($result->num_rows==0){ //if user name not existe 
+	elseif($result->num_rows==0){ //if user name not existe
+				$result = ""; 
 				 $sql = "INSERT INTO user(user_name,user_motdepasse,user_type,user_logname) VALUES('".$username."','".$password."','".$usertype."','".$email."')";
 				$result = $mysqli->query($sql);				
 				echo "true";

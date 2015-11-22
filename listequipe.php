@@ -46,7 +46,7 @@
         
         <?php 
 			$mysqli = new mysqli("localhost","root","123","phpmyadmin");
-			$sql = "SELECT equipe.equipe_id,equipe.equipe_nom,user.user_nom,equipe.equipe_discription FROM equipe INNER JOIN user ON equipe.equipe_chef_id=user.user_id " ;
+			$sql = "SELECT equipe.equipe_id,equipe.equipe_nom,user.user_name,equipe.equipe_discription FROM equipe INNER JOIN user ON equipe.equipe_chef_id=user.user_id " ;
 			$result = $mysqli->query($sql);
 			if($result){
 				if($result->num_rows>0){

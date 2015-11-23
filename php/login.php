@@ -1,5 +1,5 @@
 <?php
-$email = $password =  $result  =$username =$limit= $userequipe="";
+$email = $password =  $result  =$username =$limit= $userequipe=$userid="";
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -22,9 +22,14 @@ if($result){
 				session_start();
 				$_SESSION["admin"] = true;
 				$_SESSION["code"] = mt_rand(0,100000);
+				$_SESSION["username"] =  $row["user_name"];
+				
 				$username = $row["user_name"];
 				$limit = $row["user_type"];
 				$userequipe = $row["user_equipe_id"];
+				$userid = $row["user_id"];
+				$sql ="UPDATE user set user_time=current_timestamp() WHERE user_id=".$userid;
+				$mysqli->query($sql);
 				if($limit == "1"){
 					echo "equipier.html";
 				}

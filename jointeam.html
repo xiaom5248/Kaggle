@@ -46,60 +46,61 @@
   <hr>
 </div>
 <!-- Contents-->
-<div class="container-fluid"> 
-  <div class="row text-center">
-    <div class="col-md-2 col-md-offset-1">
-      <ul class="nav nav-pills nav-stacked" id="myTabs">
-        <br>
-        <li role="presentation" class="active"><a href="#compterendu">Compte rendu<span class="badge">4</span></a></li>
-        <br>
-        <br>
-        <li role="presentation"><a href="#reunions">Reunions</a></li>
-        
-        <br>
-      </ul>
-    </div>
-    <div class="col-md-6 "> 
-    <div class="tab-content">
-      <!--  panel compte rendu-->
-      <div role="tabpanel" class="tab-pane active" id="compterendu">
-        <div class="panel panel-info">
-          <div class="panel-heading">Compte rendu</div>
-          <div class="panel-body">
-          		<div class="container-fluid">
-                	<div class="row">
-                    	
-                    </div>
-                </div>
-          </div>
-        </div>
-      </div>
-      <!--  panel reunion-->
-      <div role="tabpanel" class="tab-pane" id="reunions">
-        <div class="panel panel-info">
-          <div class="panel-heading">Reunions</div>
-        
-          <div class="panel-body">
-          		<div class="container-fluid">
-                	<div class="row">
-                  	
-                    </div>
-                </div>
-          </div>
-          </div>
-      </div>
-      </div>
-    </div>
-     <div class="col-md-2 ">
-     	<div class="panel panel-success">
-        	<div class="panel-heading">Equipiers</div>
-            <div class="panel-body">
-            </div>
-        </div>
-     </div>
-  </div>
- 
+<div class="container"> 
+	<table class="table table-hover">
+    	<thead>
+        <tr>
+        	<th>  #  </th>
+            <th>Nom d'equipe</th>
+            <th>Chef d'equipe</th>
+            <th>Description</th>
+            <th>Date de creation</th>
+            <th>S'inscrire</th>
+         </tr>
+        </thead>
+        <tbody id = "table_body">
+        	
+        </tbody>
+ 	</table>
 </div>
+
+<!--  Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+      </div>
+      <div class="modal-body" id="modal_body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary"  id = "modal_button_sure">Confirmer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel1">Confirmation</h4>
+      </div>
+      <div class="modal-body" id="modal_body1">
+         <h3> Votre demande a été déposé, veuille attendre la confirmation du chef! </h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END modal-->
+
 <hr>
 <div class="row">
   <div class="text-center col-md-6 col-md-offset-3">
@@ -114,6 +115,6 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script> 
-<script src = "js/equipier.js"></script>
+<script src = "js/jointeam.js"></script>
 </body>
 </html>

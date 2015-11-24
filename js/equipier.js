@@ -1,4 +1,20 @@
 // JavaScript Document
+
+// ////////////////////////////////////////
+//       menu switch
+//////////////////////////////////////////
+$('#myTabs a[href="#compterendu"]').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+});
+
+$('#myTabs a[href="#reunions"]').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+});
+
+
+
 var commandcode ,username,json ;
 $(document).ready(function() {
 	commandcode = 0;
@@ -19,10 +35,6 @@ $(document).ready(function() {
 					});	
 					
 });
-
-
-
-
 function admin(){
 	commandcode = 1; 
 	$.ajax({

@@ -22,8 +22,7 @@ if($result){
 					echo "false";									
 	}
 	elseif($result->num_rows==0){ //if user name not existe
-				$password = sha1($password);   //
-				$result = ""; 
+				$password = sha1($password);   
 				 $sql = "INSERT INTO user(user_name,user_motdepasse,user_type,user_logname) VALUES('".$username."','".$password."','".$usertype."','".$email."')";
 				$result = $mysqli->query($sql);				
 				echo "true";

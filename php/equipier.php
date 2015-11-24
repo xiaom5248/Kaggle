@@ -7,15 +7,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //  make sure if it is legal login
 ////////////////////////////////////////
 if($command == 0){	
-	if( @$_SESSION["admin"]  && @isset($_SESSION["code"])){  // legal login 
-		echo true;
+	if( @$_SESSION["admin"]  && @isset($_SESSION["code"])){  
+		if(@$_SESSION["type"] == "1"){
+			echo true;          // legal login 
+		}
+		else{
+			echo "../exit.php";
+			}
 	}
 	else{    // ilegal login 
 		echo "../exit.php";
 		
 	}
-	
-
 }
 
 

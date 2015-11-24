@@ -23,10 +23,14 @@ if($result){
 				$_SESSION["admin"] = true;
 				$_SESSION["code"] = mt_rand(0,100000);
 				$_SESSION["username"] =  $row["user_name"];
+				$_SESSION["type"] = $row["user_type"];
+				$_SESSION["userid"] = $row["user_id"];
+				$_SESSION["teamid"] = $row["user_equipe_id"];
+				
 				
 				$username = $row["user_name"];
 				$limit = $row["user_type"];
-				$userequipe = $row["user_equipe_id"];
+				
 				$userid = $row["user_id"];
 				$sql ="UPDATE user set user_time=current_timestamp() WHERE user_id=".$userid;
 				$mysqli->query($sql);

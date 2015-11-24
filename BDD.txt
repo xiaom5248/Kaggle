@@ -1,0 +1,45 @@
+CREATE TABLE `application` (
+  `application_id` int(11) NOT NULL AUTO_INCREMENT,
+  `application_user_id` int(11) NOT NULL,
+  `application_team_id` int(11) NOT NULL,
+  PRIMARY KEY (`application_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `compte_rendu` (
+  `cr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cr_contenu` varchar(45) COLLATE utf8_bin NOT NULL,
+  `cr_user_id` int(11) NOT NULL,
+  `cr_reunion_id` int(11) NOT NULL,
+  PRIMARY KEY (`cr_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `reunion` (
+  `reunion_id` int(11) NOT NULL AUTO_INCREMENT,
+  `reunion_date` datetime NOT NULL,
+  `reunion_equipe_id` int(11) NOT NULL,
+  PRIMARY KEY (`reunion_id`),
+  KEY `reunion_equipe_id_idx` (`reunion_equipe_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `team` (
+  `team_id` int(11) NOT NULL AUTO_INCREMENT,
+  `team_name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `team_discription` varchar(45) COLLATE utf8_bin NOT NULL,
+  `team_chef_id` int(11) NOT NULL,
+  `team_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`team_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `user_motdepasse` varchar(45) COLLATE utf8_bin NOT NULL,
+  `user_type` varchar(45) COLLATE utf8_bin NOT NULL,
+  `user_equipe_id` int(11) DEFAULT NULL,
+  `user_logname` varchar(45) COLLATE utf8_bin NOT NULL,
+  `user_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`),
+  KEY `user_equipe_id_idx` (`user_equipe_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

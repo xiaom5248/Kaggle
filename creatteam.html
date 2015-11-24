@@ -25,13 +25,16 @@
       
       <a class="navbar-brand" href="#">Kaggle</a></div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="defaultNavbar1">           
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+     
+      
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" ><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ><span id="username_span" class="caret"></span></a>        
+        <li class="dropdown" ><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ><span id="username_span" class="caret"></span></a>
+         
           <ul class="dropdown-menu" role="menu">
             <li><a href="#"><span class = "glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paramètre</a></li>
             <li class="divider"></li>
-            <li><a href="../creatteam.html"><span class = "glyphicon glyphicon-open"></span>&nbsp;Créer une équipe</a></li>
+            <li><a href="../creatteam.html"><span class = "glyphicon glyphicon-cog"></span>&nbsp;Créer une équipe</a></li>
           </ul>
         </li>
       </ul>
@@ -52,73 +55,45 @@
 
 
 <!-- Contents-->
-<div class="container-fluid"> 
+<div class="container"> 
   <div class="row text-center">
-    <div class="col-md-2 col-md-offset-1">
-      <ul class="nav nav-pills nav-stacked" id="myTabs">
-        <br>
-        <li role="presentation" class="active"><a href="#compterendu">Compte rendu</a></li>
-        <br>
-        <br>
-        <li role="presentation"><a href="#reunions">Reunions</a></li>
-        <br>
-        <br>
-        <li role="presentation"><a href="#equipiers">Demande<span class="badge" id="chef_application_span"></span></a></li>
-        <br>
-      </ul>
-    </div>
-    <div class="col-md-6 "> 
-    <div class="tab-content">
-      <!--  panel compte rendu-->
-      <div role="tabpanel" class="tab-pane active" id="compterendu">
-        <div class="panel panel-info">
-          <div class="panel-heading">Compte rendu</div>
-          <div class="panel-body">
-          		<div class="container-fluid">
-                	<div class="row">
-                    	
+   		<div class="panel panel-info">
+        	<div class="panel-heading">
+    			<h3 class="panel-title">Création de l'équipe</h3>
+  			</div>
+        	<div class="panel-body">
+            <div calss = "container">
+    			<div class="container">
+                	<div class = "row">
+    				<div class=" text-center col-lg-4 ">
+                       		 <h5>Nom d'équipe</h5>                          
+                    </div>
+                    <div class=" text-center col-lg-4 ">
+                       		 <input type="text" id="name_team"  class="form-control" placeholder="Nom d'équipe">
+                    </div>
+                    </div>
+                    <hr>
+                    <div class = "row">
+    				<div class=" text-center col-lg-4 ">
+                       		 <h5>Description</h5>                          
+                    </div>
+                    <div class=" text-center col-lg-4 ">
+                       		 <textarea id = "discription_team" class="form-control" rows="6"></textarea>
+                    </div>
+                    </div>
+                    <div id = "error_div" class = "text-center">
+                    </div>
+                    <hr>
+                    
+                    <div class = "row">
+                    	<div class=" text-center">
+                        	 <button id="ok" class="btn btn-primary " >Valider</button>
+                        </div>
                     </div>
                 </div>
-          </div>
+             </div>
+  			</div>
         </div>
-      </div>
-      <!--  panel reunion-->
-      <div role="tabpanel" class="tab-pane" id="reunions">
-        <div class="panel panel-info">
-          <div class="panel-heading">Reunions</div>
-        
-          <div class="panel-body">
-          		<div class="container-fluid">
-                	<div class="row">
-                  	
-                    </div>
-                </div>
-          </div>
-          </div>
-      </div>
-      <!-- panel demande-->
-      <div role="tabpanel" class="tab-pane" id="equipiers">
-        <div class="panel panel-info">
-          <div class="panel-heading">Demande</div>
-        
-          <div class="panel-body">
-          		<div class="container-fluid">
-                	<div class="row">
-                  	
-                    </div>
-                </div>
-          </div>
-          </div>
-      </div>
-      </div>
-    </div>
-     <div class="col-md-2 ">
-     	<div class="panel panel-success">
-        	<div class="panel-heading">Equipiers</div>
-            <div class="panel-body">
-            </div>
-        </div>
-     </div>
   </div>
  
 </div>
@@ -136,6 +111,6 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
-<script src = "js/chef.js"></script> 
+<script src = "js/creatteam.js"></script> 
 </body>
 </html>

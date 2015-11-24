@@ -34,19 +34,20 @@
   			<div class="panel-heading">Liste d'equipe</div>
 
   <!-- table -->
-  <table class="table">
+  <table class="table table-hover">
   		<thead>
         <tr>
         	<th>  #  </th>
             <th>Nom d'equipe</th>
             <th>Chef d'equipe</th>
             <th>Description</th>
+            <th>Date de creation</th>
          </tr>
         </thead>
         
         <?php 
 			$mysqli = new mysqli("localhost","root","123","phpmyadmin");
-			$sql = "SELECT equipe.equipe_id,equipe.equipe_nom,user.user_name,equipe.equipe_discription FROM equipe INNER JOIN user ON equipe.equipe_chef_id=user.user_id " ;
+			$sql = "SELECT team.team_id,team.team_name,user.user_name,team.team_discription,team.team_time FROM team INNER JOIN user ON team.team_chef_id=user.user_id " ;
 			$result = $mysqli->query($sql);
 			if($result){
 				if($result->num_rows>0){
@@ -55,16 +56,19 @@
 						echo "<tbody>";
 							echo "<tr>";
 								echo "<th>";
-									echo $row[0];
+									echo $row["team_id"];
 								echo "</th>";
 								echo "<th>";
-									echo $row[1];
+									echo $row["team_name"];
 								echo "</th>";
 								echo "<th>";
-									echo $row[2];
+									echo $row["user_name"];
 								echo "</th>";
 								echo "<th>";
-									echo $row[3];
+									echo $row["team_discription"];
+								echo "</th>";
+								echo "<th>";
+									echo $row["team_time"];
 								echo "</th>";
 							echo "</tr>";
 						echo "</tbody>";
@@ -74,6 +78,7 @@
 	}
 
 }
+$mysqli->close();
 		?>
   </table>
 </div>

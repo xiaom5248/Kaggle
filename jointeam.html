@@ -8,7 +8,7 @@
 
 <!-- Bootstrap -->
 <link href="css/bootstrap.css" rel="stylesheet">
-
+<link href="css/fuelux.min.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class = "fuelux">
 <nav class="navbar navbar-default">
   <div class="container-fluid"> 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,10 +58,12 @@
             <th>S'inscrire</th>
          </tr>
         </thead>
+        
         <tbody id = "table_body">
         	
         </tbody>
  	</table>
+    <div class="loader" data-initialize="loader" id="myLoader"></div>
 </div>
 
 <!--  Modal -->
@@ -115,6 +117,7 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script> 
+<script src="js/fuelux.min.js"></script>
 <script src = "js/jointeam.js"></script>
 </body>
 </html>

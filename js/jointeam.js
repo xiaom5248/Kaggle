@@ -46,6 +46,7 @@ function admin(){
 function table(){
 	
 	commandcode = 2;
+	$('#myLoader').loader();
 	$.ajax({
 						url: "php/jointeam.php",
 						type: "POST",
@@ -62,9 +63,9 @@ function table(){
 								$("#table_body").append("<tr><th id='"+index+"'>"+this.team_id+"</th>"+
 								"<th>"+this.team_name+"</th>+<th>"+this.user_name+"</th>"+
 								"<th>"+this.team_discription+"</th>"+"<th>"+this.team_time+"</th>"+
-								"<th id='check_"+index+"'><button class = 'btn btn-success' data-toggle='modal' data-target='#myModal' onclick = 'makesure(this)'>S'inscrire</button></th></tr>"							
+								"<th><button class = 'btn btn-success' data-toggle='modal' data-target='#myModal' onclick = 'makesure(this)'>S'inscrire</button></th></tr>"							
 								);
-								
+								$('#myLoader').loader('destroy');
 							});
 							
 							

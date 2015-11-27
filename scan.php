@@ -1,6 +1,7 @@
 <?php
+session_start();
 
-$dir = "files";
+$dir = "upload/".@$_SESSION['teamid'];
 
 // Run the recursive function 
 
@@ -60,7 +61,7 @@ function scan($dir){
 header('Content-type: application/json');
 
 echo json_encode(array(
-	"name" => "files",
+	"name" => "upload",
 	"type" => "folder",
 	"path" => $dir,
 	"items" => $response

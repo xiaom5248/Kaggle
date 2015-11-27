@@ -16,7 +16,7 @@
 -------------------------*/
 
 body {
-	background-color: #23232e;
+background-color: #23232e;
 	font: 14px normal Arial, Helvetica, sans-serif;
 	z-index: -4;
 }
@@ -28,6 +28,7 @@ body {
 
 
 .filemanager {
+	
 	width: 95%;
 	max-width:1340px;
 	position: relative;

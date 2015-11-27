@@ -13,6 +13,10 @@ $('#myTabs a[href="#reunions"]').click(function (e) {
   $(this).tab('show')
 });
 
+$("#regarder").on('click',function(){  
+	 window.location.href="../fileview.html";
+});
+
 
 
 var commandcode ,username,json ;

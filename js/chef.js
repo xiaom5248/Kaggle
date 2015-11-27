@@ -18,6 +18,11 @@ $('#myTabs a[href="#demande"]').click(function (e) {
   $(this).tab('show');
 });
 
+$("#regarder").on('click',function(){  
+	 window.location.href="../fileview.html";
+});
+
+
 var commandcode ,username,teamid,index_id;
 $(document).ready(function() {
 	commandcode = 0;

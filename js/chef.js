@@ -4,21 +4,19 @@
 //       menu switch
 //////////////////////////////////////////
 $('#myTabs a[href="#compterendu"]').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+  e.preventDefault();
+  $(this).tab('show');
 });
 
 $('#myTabs a[href="#reunions"]').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+  e.preventDefault();
+  $(this).tab('show');
 });
 
 $('#myTabs a[href="#demande"]').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+  e.preventDefault();
+  $(this).tab('show');
 });
-
-
 
 var commandcode ,username,teamid,index_id;
 $(document).ready(function() {
@@ -31,15 +29,16 @@ $(document).ready(function() {
 						},						
 						success: function(result){
 							if(result == true){
-								admin();								
+								admin();	
+								preview();							
 							}
 							else{
 								location.href = result;								
 							}
 						}
-					});	
-					
+					});						
 });
+
 
 
 
@@ -88,8 +87,8 @@ function application(){
 							alert(a);
 						},
 						success: function(result){							
-							var jsonarry = JSON.parse(result);
-							$(jsonarry).each(function(app_index){								
+							var jsonarry1 = JSON.parse(result);
+							$(jsonarry1).each(function(app_index){								
 								$("#table_body").append("<tr><th id='"+app_index+"'>"+this.applicationid+"</th>"+
 								"<th>"+this.applicationteamid+"</th>+<th>"+this.username+"</th>"+
 								"<th>"+this.app_userid+"</th>"+							
@@ -164,3 +163,52 @@ function app_refuse(obj){
 						} 
 					});	
 	}
+	
+	
+	
+	function preview(){
+		commandcode = 5;
+		var htmlcode = "",configcode= [];
+		 $.ajax({
+						url: "php/chef.php",
+						type: "POST",
+						data: {
+							command: commandcode			
+						},
+						error: function(a){
+							alert(a);
+						},
+						success: function(result){
+							if(result != false){									
+								var jsonarry2 = JSON.parse(result);						
+								$(jsonarry2).each(function(index){
+									var title = this.testcon.split("/");										
+									htmlcode += "<img src='"+this.testcon + "' class='file-preview-image' alt='Desert' title='"+title[3]+"'>"+ "*$$*";
+									configcode[index]= {"caption": title[3], "width":'120px', "url": '../php/filedelete.php', "key":  this.testcon , "extra": {"id": this.testid}};															
+								});		
+								
+									htmlcode = htmlcode.substring(0,htmlcode.length-4);								
+									$('#file-fr').fileinput({
+									language: 'fr',
+       								uploadUrl: 'php/fileupload.php',
+        							allowedFileExtensions : ['jpg', 'png','gif','pdf','docx','txt'],
+									overwriteInitial: false,									
+									initialPreview: htmlcode,									
+									initialPreviewConfig: configcode,										
+   		 							});		
+								}
+							else{
+									$('#file-fr').fileinput({
+									language: 'fr',
+       								uploadUrl: 'php/fileupload.php',
+        							allowedFileExtensions : ['jpg', 'png','gif','pdf','docx']
+   		 								});	
+									}
+						}
+					    });	
+		
+		
+		
+		
+		
+		}

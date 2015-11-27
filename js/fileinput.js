@@ -2521,6 +2521,7 @@
     ;
 
 //FileInput plugin definition
+
     $.fn.fileinput = function (option) {
         if (!hasFileAPISupport() && !isIE(9)) {
             return;

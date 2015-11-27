@@ -23,8 +23,6 @@ if($command == 0){
 	
 
 }
-
-
 ////////////////////////////////////////
 //  	legal login
 ////////////////////////////////////////
@@ -54,6 +52,7 @@ if($command == 2){  //check for new applications
 				}
 				echo json_encode($return_arr1);
 			}
+			
 			$mysqli->close();
 			
 	
@@ -76,7 +75,8 @@ if($command == 3){
 			}
 	$mysqli->close();
 	}
-if($command == 4){
+	
+	if($command == 4){
 		$applicationid = @$_POST['applicationid'];
 		$mysqli = new mysqli("localhost","root","123","phpmyadmin");
 		$sql = "DELETE FROM application WHERE application_id =".$applicationid;
@@ -89,4 +89,31 @@ if($command == 4){
 				}
 				$mysqli->close();
 	}
+	
+	
+if($command == 5){
+	$return_arr2 = array();
+		$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+		$sql = "SELECT * FROM test WHERE test_team_id =".$_SESSION['teamid'];
+		$result = $mysqli->query($sql);
+		if($result){  
+				if($result->num_rows>0){					
+					while($row = $result->fetch_array()){
+						$arr2['testid'] = $row['test_id'];
+						$arr2['testcon'] = $row['test_con'];
+						$arr2['testteamid'] = $row['test_team_id'];
+						array_push($return_arr2,$arr2);
+					}
+					echo json_encode($return_arr2);
+				}
+				else{
+					echo false;
+					}
+				
+			}
+			
+		$mysqli->close();
+	}
+	
+	
 ?>

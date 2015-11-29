@@ -14,7 +14,7 @@ $('#myTabs a[href="#reunions"]').click(function (e) {
 });
 
 $("#regarder").on('click',function(){  
-	 window.location.href="../fileview.html";
+	 window.open("../fileview.html");
 });
 
 

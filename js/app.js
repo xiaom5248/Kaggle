@@ -7,7 +7,8 @@
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,
-		//day: '2015-11-12',
+		language: 'fr-FR',
+		//day: '2015-11-12',		
 		onAfterEventsLoad: function(events) {
 			if(!events) {
 				return;
@@ -31,6 +32,7 @@
 				general: 'label'
 			}
 		}
+		
 	};
 
 	var calendar = $('#calendar').calendar(options);

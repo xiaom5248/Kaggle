@@ -38,6 +38,7 @@
             <li><a href="#"><span class = "glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paramètre</a></li>
             <li class="divider"></li>
             <li><a href="../creatteam.html"><span class = "glyphicon glyphicon-open"></span>&nbsp;Créer une équipe</a></li>
+            <li><a href="../php/exit.php"><span class = "glyphicon glyphicon-log-out"></span>&nbsp;Déconnecter</a></li>
           </ul>
         </li>
       </ul>
@@ -78,8 +79,47 @@
           <div class="panel panel-info">
             <div class="panel-heading">Reunions</div>
             <div class="panel-body embed-responsive-item">
-              <div class="container-fluid">  
-                       
+              <div class="container-fluid">
+                <div class="pull-right form-inline">
+                  <div class = "row">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#creatmeeting"> Créer une réunion</button>
+                    
+                    <!-- modal creat meeting-->
+                    <div class="modal fade" id="creatmeeting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="exampleModalLabel">Nouvelle réunion</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class = "container-fluid">
+                              <div class = "row">
+                                <div class=" text-center col-lg-4 ">
+                                  <h5> Titre</h5>
+                                </div>
+                                <div class=" text-center col-lg-7" >
+                                  <input type="text" id="titre_creatmeeting" class="form-control"  placeholder="Titre">
+                                </div>
+                              </div>
+                              
+                              
+                              
+                              
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                            <button type="button" class="btn btn-primary" id = "btnccreatmeeting">Créer</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- END modal creat meeting-->
+                    <button class="btn btn-info"> Manager les réunions</button>
+                  </div>
+                </div>
                 <div class="page-header">
                   <div class="pull-right form-inline">
                     <div class="btn-group">
@@ -93,9 +133,9 @@
                       <button class="btn btn-warning" data-calendar-view="week">Week</button>
                       <button class="btn btn-warning" data-calendar-view="day">Day</button>
                     </div>
-                  </div>                 
-                   <h3></h3>
-                   </div>
+                  </div>
+                  <h3></h3>
+                </div>
                 <div class="row">
                   <div class="span9">
                     <div id="calendar"></div>
@@ -166,6 +206,7 @@
 <hr>
 <script src = "js/chef.js"></script> 
 <script type="text/javascript" src="js/underscore-min.js"></script> 
+<script type="text/javascript" src="js/language/fr-FR-calendar.js"></script>
 <script type="text/javascript" src="js/calendar.js"></script> 
 <script type="text/javascript" src="js/app.js"></script>
 </body>

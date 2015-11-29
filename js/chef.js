@@ -19,8 +19,11 @@ $('#myTabs a[href="#demande"]').click(function (e) {
 });
 
 $("#regarder").on('click',function(){  
-	 window.location.href="../fileview.html";
+     window.open('../fileview.html');
+	// window.location.href="../fileview.html";
 });
+
+
 
 
 var commandcode ,username,teamid,index_id;

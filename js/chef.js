@@ -88,7 +88,7 @@ function application(){
 							command: commandcode						
 						},
 						//dataType: "json",
-						error: function(a){
+						error: function(a){F
 							alert(a);
 						},
 						success: function(result){							

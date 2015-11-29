@@ -142,7 +142,7 @@
   bottom: -21px;
   padding: 0px 5px;
   cursor: pointer;
-  z-index: 5;
+  z-index: 10;
   text-align: center;
   width: 26px;
   margin-right: -17px;
@@ -159,7 +159,7 @@
   margin-left: -7px;
   height: 9px;
   top: -1px;
-  z-index: 1;
+  z-index: 6;
 }
 #cal-slide-tick.tick-month1 {
   left: 12.5%;
@@ -218,7 +218,7 @@
 .cal-week-box .cal-column {
   position: absolute;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 .cal-week-box .arrow-before,
 .cal-week-box .arrow-after {
@@ -268,12 +268,13 @@
 #cal-day-box #cal-day-panel {
   position: relative;
   padding-left: 60px;
+   z-index: 20;
 }
 #cal-day-box #cal-day-panel-hour {
   position: absolute;
   width: 100%;
   margin-left: -60px;
-  z-index: -1;
+  z-index:-1;
 }
 #cal-day-box .day-event {
   max-width: 200px;

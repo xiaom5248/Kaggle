@@ -11,7 +11,7 @@ session_start();
 session_destroy();
 ?>
 <script>
-location.href ="";
+location.href="../index.html";
 </script>
 </body>
 </html>

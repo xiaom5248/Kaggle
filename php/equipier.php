@@ -12,11 +12,11 @@ if($command == 0){
 			echo true;          // legal login 
 		}
 		else{
-			echo "../exit.php";
+			echo "../php/exit.php";
 			}
 	}
 	else{    // ilegal login 
-		echo "../exit.php";
+		echo "../php/exit.php";
 		
 	}
 }

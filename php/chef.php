@@ -35,7 +35,7 @@ if($command == 1){   // set user name
 }
 if($command == 2){  //check for new applications
 			$return_arr1 = array();
-			$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+			$mysqli = new mysqli("localhost","root","pass","kaggle");
 			$sql = "SELECT application_id FROM application WHERE application_team_id =".$_SESSION['teamid'];
 			$result = $mysqli->query($sql);
 			if($result){  // if there are new applications
@@ -60,7 +60,7 @@ if($command == 2){  //check for new applications
 if($command == 3){
 	$applicationid = @$_POST['applicationid'];
 	$applicationuserid = @$_POST['applicationuserid'];
-	$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+	$mysqli = new mysqli("localhost","root","pass","kaggle");
 		$sql = "UPDATE user SET user_equipe_id =".@$_SESSION['teamid']." WHERE user_id =".$applicationuserid;
 		$result = $mysqli->query($sql);
 	    if($result){
@@ -78,7 +78,7 @@ if($command == 3){
 	
 	if($command == 4){
 		$applicationid = @$_POST['applicationid'];
-		$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+		$mysqli = new mysqli("localhost","root","pass","kaggle");
 		$sql = "DELETE FROM application WHERE application_id =".$applicationid;
 		$result = $mysqli->query($sql);
 		if($result){
@@ -93,7 +93,7 @@ if($command == 3){
 	
 if($command == 5){
 	$return_arr2 = array();
-		$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+		$mysqli = new mysqli("localhost","root","pass","kaggle");
 		$sql = "SELECT * FROM test WHERE test_team_id =".$_SESSION['teamid'];
 		$result = $mysqli->query($sql);
 		if($result){  

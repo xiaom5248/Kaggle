@@ -46,7 +46,7 @@
         </thead>
         
         <?php 
-			$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+			$mysqli = new mysqli("localhost","root","pass","kaggle");
 			$sql = "SELECT team.team_id,team.team_name,user.user_name,team.team_discription,team.team_time FROM team INNER JOIN user ON team.team_chef_id=user.user_id " ;
 			$result = $mysqli->query($sql);
 			if($result){

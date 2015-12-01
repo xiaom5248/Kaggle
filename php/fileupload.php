@@ -7,7 +7,7 @@
 			$fileurl .="/".@$_FILES["file_data"]["name"];
 		move_uploaded_file(@$_FILES["file_data"]["tmp_name"],$fileurl);
 		
-		$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+		$mysqli = new mysqli("localhost","root","pass","kaggle");
 		$sql = "INSERT INTO test(test_con,test_team_id) VALUES('".$fileurl."',".@$_SESSION['teamid'].")";
 		$result = $mysqli->query($sql);		
 				$arr1 = "{}";			

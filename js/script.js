@@ -281,7 +281,7 @@ $(function(){
 
 			// Empty the old result and make the new one
 
-			fileList.empty().hide();
+			//fileList.empty().hide();
 
 			if(!scannedFolders.length && !scannedFiles.length) {
 				filemanager.find('.nothingfound').show();

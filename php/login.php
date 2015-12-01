@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = sha1($password);
 }
 
-$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+$mysqli = new mysqli("localhost","root","pass","kaggle");
 $sql = "SELECT * FROM user WHERE user_logname ='".$email."' AND user_motdepasse = '".$password."'" ;
 $result = $mysqli->query($sql);
 if($result){	

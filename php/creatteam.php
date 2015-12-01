@@ -43,7 +43,7 @@ if($command == 2){
   $userid = @$_SESSION["userid"];
   $teamid = @$_SESSION["teamid"];
  
-     $mysqli = new mysqli("localhost","root","123","phpmyadmin");
+     $mysqli = new mysqli("localhost","root","pass","kaggle");
 	 
 	  if($teamid == null){			// one chef only have one team
 	  	 $sql = "INSERT INTO team(team_name,team_discription,team_chef_id) VALUES('".$name_team."','".$discription_team."',".$userid.")";

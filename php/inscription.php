@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usertype = test_input(@$_POST["type"]);
 }
 
-$mysqli = new mysqli("localhost","root","123","phpmyadmin");
+$mysqli = new mysqli("localhost","root","pass","kaggle");
 $sql = "SELECT user_id FROM user WHERE user_logname ='".$email."'" ;
 $result = $mysqli->query($sql);
 if($result){	 
